@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Basket.css';
 
-function Basket({ catalog, deliveryRules, offers }) {
+export function Basket({ catalog, deliveryRules, offers }) {
   const [items, setItems] = useState([]);
 
   // Function that add a product to the basket
@@ -53,9 +53,24 @@ function Basket({ catalog, deliveryRules, offers }) {
         ))}
       </ul>
       <div className='button-container'>
-        <button onClick={() => addItem('R01')}>Add Red Plate (R01)</button>
-        <button onClick={() => addItem('G01')}>Add Green Plate (G01)</button>
-        <button onClick={() => addItem('B01')}>Add Blue Plate (B01)</button>
+        <button
+          onClick={() => addItem('R01')}
+          style={{ backgroundColor: 'red', color: 'white' }}
+        >
+          Add Red Plate (R01)
+        </button>
+        <button
+          onClick={() => addItem('G01')}
+          style={{ backgroundColor: 'green', color: 'white' }}
+        >
+          Add Green Plate (G01)
+        </button>
+        <button
+          onClick={() => addItem('B01')}
+          style={{ backgroundColor: 'blue', color: 'white' }}
+        >
+          Add Blue Plate (B01)
+        </button>
       </div>
       <p className='total'>Total: ${calculateTotal().toFixed(2)}</p>
     </div>
